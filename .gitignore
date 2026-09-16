@@ -1,0 +1,64 @@
+# Environment variables and local secrets
+.env
+.env.*
+!.env.example
+.envrc
+.direnv/
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+.Python
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.egg-info/
+build/
+dist/
+
+# Node / Vite
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data (uploaded documents and vector indexes)
+data/
+uploads/
+backend/data/
+backend/uploads/
+qdrant_storage/
+*.db
+*.sqlite
+*.sqlite3
+*.log
+logs/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.codex/
+.agents/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini

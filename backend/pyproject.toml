@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=80"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "enterprise-rag-api"
+version = "0.1.0"
+description = "Enterprise document RAG question-answering API"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.116.0,<1.0.0",
+  "uvicorn[standard]>=0.35.0,<1.0.0",
+  "qdrant-client>=1.15.0,<2.0.0",
+  "PyMuPDF>=1.26.0,<2.0.0",
+  "python-multipart>=0.0.20,<1.0.0",
+  "httpx>=0.28.0,<1.0.0",
+  "pydantic>=2.11.0,<3.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.4.0,<9.0.0",
+  "pytest-asyncio>=1.1.0,<2.0.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]

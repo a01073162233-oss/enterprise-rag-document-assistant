@@ -1,0 +1,16 @@
+name: enterprise-rag
+
+# The application uses embedded Qdrant by default. Start this optional service
+# only when you want an independent vector database:
+#   docker compose up -d qdrant
+# Then set QDRANT_MODE=remote in .env.
+services:
+  qdrant:
+    image: ${QDRANT_IMAGE:-qdrant/qdrant:latest}
+    container_name: enterprise-rag-qdrant
+    restart: unless-stopped
+    ports:
+      - "${QDRANT_HTTP_PORT:-6333}:6333"
+      - "${QDRANT_GRPC_PORT:-6334}:6334"
+    volumes:
+      - ./data/qdrant-server:/qdrant/storage
